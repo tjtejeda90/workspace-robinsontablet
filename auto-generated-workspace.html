@@ -492,238 +492,6 @@ cpdefine("inline:com-chilipeppr-workspace-robinsonmfgtablet", ["chilipeppr_ready
             // the workspace can be referred to
             var wsObj = this;
 
-
-            // // Zipwhip texting
-            // // com-chilipeppr-ws-zipwhip
-            // chilipeppr.load(
-            //     "#com-chilipeppr-ws-zipwhip",
-            //     "http://raw.githubusercontent.com/chilipeppr/widget-zipwhip/master/auto-generated-widget.html",
-            //     function() {
-            //         require(["inline:com-chilipeppr-elem-zipwhip"], function(zipwhip) {
-            //             console.log("inside require for zipwhip. good.");
-            //             zipwhip.init();
-            //             // setup toggle button
-            //             var zwBtn = $('#com-chilipeppr-ws-menu .zipwhip-button');
-            //             var zwDiv = $('#com-chilipeppr-ws-zipwhip');
-            //             zwBtn.click(function() {
-            //                 console.log("zwBtn got clicked");
-            //                 if (zwDiv.hasClass("hidden")) {
-            //                     // unhide
-            //                     zwDiv.removeClass("hidden");
-            //                     zwBtn.addClass("active");
-            //                 }
-            //                 else {
-            //                     zwDiv.addClass("hidden");
-            //                     zwBtn.removeClass("active");
-            //                 }
-            //                 $(window).trigger('resize');
-            //             });
-            //         });
-            //     }); //End Zipwhip texting
-            // console.log("loaded zipwhip widget");
-
- 
-
-            // // Macro
-            // // com-chilipeppr-ws-macro
-            // chilipeppr.load(
-            //     "#com-chilipeppr-ws-macro",
-            //     "http://raw.githubusercontent.com/chilipeppr/widget-macro/master/auto-generated-widget.html",
-            //     function() {
-            //         //"http://fiddle.jshell.net/chilipeppr/ZJ5vV/show/light/", function () {
-            //         cprequire(["inline:com-chilipeppr-widget-macro"], function(macro) {
-            //             macro.init();
-            //             // setup toggle button
-            //             var alBtn = $('#com-chilipeppr-ws-menu .macro-button');
-            //             var alDiv = $('#com-chilipeppr-ws-macro');
-            //             alBtn.click(function() {
-            //                 if (alDiv.hasClass("hidden")) {
-            //                     // unhide
-            //                     alDiv.removeClass("hidden");
-            //                     alBtn.addClass("active");
-            //                     //autolevel.onDisplay();
-            //                 }
-            //                 else {
-            //                     alDiv.addClass("hidden");
-            //                     alBtn.removeClass("active");
-            //                     //autolevel.onUndisplay();
-            //                 }
-            //                 $(window).trigger('resize');
-
-            //             });
-            //         });
-            //     }); //End Macro
-
-            // // JScut
-            // // com-chilipeppr-ws-jscut
-            // chilipeppr.load(
-            //     "#com-chilipeppr-ws-jscut",
-            //     "http://raw.githubusercontent.com/chilipeppr/widget-jscut/master/auto-generated-widget.html",
-            //     function() {
-            //         require(["inline:org-jscut-gcode-widget"], function(jscut) {
-            //             jscut.init();
-            //             // setup toggle button
-            //             var alBtn = $('#com-chilipeppr-ws-menu .jscut-button');
-            //             var alDiv = $('#com-chilipeppr-ws-jscut');
-            //             alBtn.click(function() {
-            //                 if (alDiv.hasClass("hidden")) {
-            //                     // unhide
-            //                     alDiv.removeClass("hidden");
-            //                     alBtn.addClass("active");
-            //                 }
-            //                 else {
-            //                     alDiv.addClass("hidden");
-            //                     alBtn.removeClass("active");
-            //                 }
-            //                 $(window).trigger('resize');
-
-            //             });
-            //         });
-            //     }); //End JSCut
-                
- 
-
-            // // SuttleXpress
-            // // Dynamically load the ShuttleXpress Widget. i.e. wait til user clicks on 
-            // // the button first time.
-            // // uses generic object so can cut/paste easier for others (or create actual object)
-            // // lordmundi/btyfqk7w
-            // this.shuttlexpressObj = function() {
-            //     return {
-            //     id: "shuttlexpress",
-            //     //url: "http://fiddle.jshell.net/chilipeppr/27v59xLg/show/light/",
-            //     url: "http://raw.githubusercontent.com/chilipeppr/widget-shuttlexpress/master/auto-generated-widget.html",
-            //     requireName: "inline:com-chilipeppr-widget-shuttlexpress",
-            //     btn: null,
-            //     div: null,
-            //     instance: null,
-            //     init: function() {
-            //         this.btn = $('#com-chilipeppr-ws-menu .' + this.id + '-button');
-            //         this.div = $('#com-chilipeppr-ws-' + this.id + '');
-            //         this.setupBtn();
-            //         console.log('done instantiating ' + this.id + ' add-on widget');
-            //     },
-            //     setupBtn: function() {
-            //         this.btn.click(this.toggle.bind(this));
-            //     },
-            //     toggle: function() {
-            //         if (this.div.hasClass("hidden")) {
-            //             // unhide
-            //             this.show();
-            //         }
-            //         else {
-            //             this.hide();
-            //         }
-            //     },
-            //     show: function(callback) {
-            //         this.div.removeClass("hidden");
-            //         this.btn.addClass("active");
-
-            //         // see if instantiated already
-            //         // if so, just activate
-            //         if (this.instance != null) {
-            //             this.instance.activateWidget();
-            //             if (callback) callback();
-            //         }
-            //         else {
-            //             // otherwise, dynamic load
-            //             var that = this;
-            //             chilipeppr.load(
-            //                 '#com-chilipeppr-ws-' + this.id + '',
-            //                 this.url,
-            //                 function() {
-            //                     require([that.requireName], function(myinstance) {
-            //                         that.instance = myinstance;
-            //                         console.log(that.id + " instantiated. instance:", that.instance);
-            //                         that.instance.init();
-            //                         if (callback) callback();
-            //                     });
-            //                 }
-            //             );
-            //         }
-            //         $(window).trigger('resize');
-            //     },
-            //     hide: function() {
-            //         this.div.addClass("hidden");
-            //         this.btn.removeClass("active");
-            //         if (this.instance != null) {
-            //             this.instance.unactivateWidget();
-            //         }
-            //         $(window).trigger('resize');
-            //     },
-            //     }
-            // }();
-            // this.shuttlexpressObj.init();
-            // //End ShuttleXpress
-
-            // // Touch Plate
-            // // Dynamically load the Touch Plate widget, i.e. wait til user clicks on 
-            // // the button first time.
-            // this.touchPlateObj = function() {
-            //     return {
-            //     touchPlateBtn: null,
-            //     touchPlateDiv: null,
-            //     touchPlateInstance: null,
-            //     init: function() {
-            //         this.touchPlateBtn = $('#com-chilipeppr-ws-menu .touchplate-button');
-            //         this.touchPlateDiv = $('#com-chilipeppr-ws-touchplate');
-            //         this.setupBtn();
-            //         console.log("done instantiating touchPlate add-on widget");
-            //     },
-            //     setupBtn: function() {
-            //         this.touchPlateBtn.click(this.toggletouchPlate.bind(this));
-            //     },
-            //     toggletouchPlate: function() {
-            //         if (this.touchPlateDiv.hasClass("hidden")) {
-            //             // unhide
-            //             this.showtouchPlate();
-            //         }
-            //         else {
-            //             this.hidetouchPlate();
-            //         }
-            //     },
-            //     showtouchPlate: function(callback) {
-            //         this.touchPlateDiv.removeClass("hidden");
-            //         this.touchPlateBtn.addClass("active");
-
-            //         // see if instantiated already
-            //         // if so, just activate
-            //         if (this.touchPlateInstance != null) {
-            //             this.touchPlateInstance.activateWidget();
-            //             if (callback) callback();
-            //         }
-            //         else {
-            //             // otherwise, dynamic load
-            //             var that = this;
-            //             chilipeppr.load(
-            //                 "#com-chilipeppr-ws-touchplate",
-            //                 "http://raw.githubusercontent.com/chilipeppr/widget-touchplate/master/auto-generated-widget.html",
-            //                 function() {
-            //                     require(["inline:com-chilipeppr-widget-touchplate"], function(touchPlate) {
-            //                         that.touchPlateInstance = touchPlate;
-            //                         console.log("touchPlate instantiated. touchPlateInstance:", that.touchPlateInstance);
-            //                         that.touchPlateInstance.init();
-            //                         //eagleInstance.activateWidget();
-            //                         if (callback) callback();
-            //                     });
-            //                 }
-            //             );
-            //         }
-            //         $(window).trigger('resize');
-            //     },
-            //     hidetouchPlate: function() {
-            //         this.touchPlateDiv.addClass("hidden");
-            //         this.touchPlateBtn.removeClass("active");
-            //         if (this.touchPlateInstance != null) {
-            //             this.touchPlateInstance.unactivateWidget();
-            //         }
-            //         $(window).trigger('resize');
-            //     },
-            //     }
-            // }();
-            // this.touchPlateObj.init();
-            // //End Touch Plate
-
             // Super Touch Plate
             // http://raw.githubusercontent.com/PyroAVR/widget-super-touchplate/master/auto-generated-widget.html
             // Dynamically load, i.e. wait til user clicks on the button first time.
@@ -902,7 +670,7 @@ cpdefine("inline:com-chilipeppr-workspace-robinsonmfgtablet", ["chilipeppr_ready
             chilipeppr.load(
                 "com-chilipeppr-xyz",
                 // Lauer's new widget 8/16/15
-                "http://raw.githubusercontent.com/chilipeppr/widget-axes/master/auto-generated-widget.html", 
+                "http://raw.githubusercontent.com/tjtejeda90/widget-axes/master/auto-generated-widget.html", 
                 // Temporary widget from Danal
                 //"http://fiddle.jshell.net/Danal/vktco1y6/show/light/", 
                 // Lauer's original core widget
@@ -1015,33 +783,6 @@ cpdefine("inline:com-chilipeppr-workspace-robinsonmfgtablet", ["chilipeppr_ready
                             </div>
                             
                         </div>
-                        <!-- Zipwhip Text Messaging -->
-                        <div class="zhigh hidden" id="com-chilipeppr-ws-zipwhip"></div>
-                        
-                        <!-- Auto Leveller -->
-                        <div class="zhigh hidden" id="com-chilipeppr-ws-autolevel">Auto-Level Here</div>
-                        
-                        <!-- Macro -->
-                        <div class="zhigh hidden" id="com-chilipeppr-ws-macro">Macro Here</div>
-                        
-                        <!-- JScut -->
-                        <div class="zhigh hidden" id="com-chilipeppr-ws-jscut">Jscut Here</div>
-                        
-                        <!-- Laser Solder -->
-                        <div class="zhigh hidden" id="com-chilipeppr-ws-lasersolder">Laser Solderer Here</div>
-                        
-                        <!-- Eagle BRD -->
-                        <div class="zhigh hidden" id="com-chilipeppr-ws-eagle">Eagle BRD Here</div>
-                        
-                        <!-- GPIO -->
-                        <div class="zhigh hidden" id="com-chilipeppr-ws-gpio">GPIO Here</div>
-                        
-                        <!-- shuttlexpress -->
-                        <div class="zhigh hidden" id="com-chilipeppr-ws-shuttlexpress">ShuttleXpress Here</div>
-                        
-                        <!-- Touch Plate -->
-                        <div class="zhigh hidden" id="com-chilipeppr-ws-touchplate">Touch Plate Here</div>
-                        
                         <div class="zhigh hidden" id="com-chilipeppr-ws-superTouchplate">Super Touch Plate Here</div>
                         
                         <!-- Arduino / Atmel Firmware Programmer -->
@@ -1049,8 +790,6 @@ cpdefine("inline:com-chilipeppr-workspace-robinsonmfgtablet", ["chilipeppr_ready
                         
                         <!-- Gcode List -->
                         <div id="com-chilipeppr-gcode-list" class="zhigh">Load Gcode List Here</div>
-                        <!-- Serial In/Out Text Log-->
-                        <div id="com-chilipeppr-serialport-log" class="zhigh">Load Serial Port Log Here</div>
                     </div>
                     <!-- 3D Viewer -->
                     <div class="widget col-xs-6 hidden">
@@ -1063,6 +802,14 @@ cpdefine("inline:com-chilipeppr-workspace-robinsonmfgtablet", ["chilipeppr_ready
                         <div id="com-chilipeppr-xyz" class="">Load XYZ Here</div>
                         <!-- Tinyg -->
                         <div id="com-chilipeppr-tinyg" class="">Load TinyG Here</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 widgetx padrt">
+                        <!-- Serial In/Out Text Log-->
+                        <div id="com-chilipeppr-serialport-log" class="zhigh">Load Serial Port Log Here</div>
+                    </div>
+                    <div class="col-xs-6 nopadding">
                         <!-- WebRTC Client -->
                         <div id="com-chilipeppr-webrtcclient" class="hidden">Load WebRTC Client Here</div>
                         <!-- Serial Port Selector -->
